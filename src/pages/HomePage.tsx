@@ -13,7 +13,6 @@ export function HomePage() {
         refetchOnFocus: true
     })
 
-
     const [fetchRepos, {isLoading: areReposLoading, data: repos}] = useLazyGetUserReposQuery()
 
     const clickHandler = (username: string) => {
@@ -23,7 +22,6 @@ export function HomePage() {
 
     useEffect(() => {
         setDropdown(debounced.length > 3 && data?.length! > 0)
-        console.log(search)
     }, [debounced, data])
     return (
         <div className="flex justify-center pt-10 mx-auto h-screen w-screen">
